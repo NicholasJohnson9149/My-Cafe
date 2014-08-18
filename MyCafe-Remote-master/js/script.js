@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	var deviceID    = "55ff6c065075555324421487";
-    var accessToken = "7d00c39db70168aac8c3a5e317f2d3ae32809130";
+    var accessToken = "6249ef747c68f32bde0e4deb2f1395705e59a84b";
 	var brew = 0; // 1 = brewing, 0 = idle
 	var command = ""; // sendData type
 	var grindTime = 0; // how long to grind
@@ -10,8 +10,8 @@ $(document).ready(function() {
 	requestURL = "https://api.spark.io/v1/devices/" +deviceID + "/" + brew + "/";
     
     //Brew Function 
-	brew = $.get( requestURL, { access_token: accessToken });
-	// if so, adjust interface accordingly
+	//brew = $.get( requestURL, { access_token: accessToken });
+    //if so, adjust interface accordingly
 	if (brew == 1){
 		$('.brew').empty().html('STOP BREWING');
 	}
@@ -62,10 +62,10 @@ $(document).ready(function() {
 		requestURL = "https://api.spark.io/v1/devices/" +deviceID + "/" + command + "/";
         
 		if (command == "grind"){
-			$.post( requestURL, { params: data, access_token: accessToken }, function(){return 1;});
+			$.post( requestURL, { access_token: accessToken, params: data }, function(){return 1;});
 		}
 		else if (command == "brew"){
-			$.post( requestURL, { params: data, access_token: accessToken }, function(){return 1;});
+			$.post( requestURL, { access_token: accessToken, params: data }, function(){return 1;});
 		}
 	};
 	
