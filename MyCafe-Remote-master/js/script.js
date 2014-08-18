@@ -1,6 +1,6 @@
 $(document).ready(function() {
-	var deviceID    = "55ff6a065075555345371487";
-    var accessToken = "466f1496253dbbf444934e303da5ac69c5409884";
+	var deviceID    = "DeviceAccessTokenNumberGoeshere!";
+	 var accessToken = "YourAcountsTokenGoesHereCanBefoundinSettingofSparkBuildIDE";
 	var brew = 0; // 1 = brewing, 0 = idle
 	var command = ""; // sendData type
 	var grindTime = 0; // how long to grind
