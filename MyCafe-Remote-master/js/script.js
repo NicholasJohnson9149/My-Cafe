@@ -1,6 +1,6 @@
 $(document).ready(function() {
-	var deviceID    = "55ff6a065075555345371487";
-    var accessToken = "466f1496253dbbf444934e303da5ac69c5409884";
+	var deviceID    = "55ff6c065075555324421487";
+    var accessToken = "7d00c39db70168aac8c3a5e317f2d3ae32809130";
 	var brew = 0; // 1 = brewing, 0 = idle
 	var command = ""; // sendData type
 	var grindTime = 0; // how long to grind
@@ -68,6 +68,7 @@ $(document).ready(function() {
 			$.post( requestURL, { params: data, access_token: accessToken }, function(){return 1;});
 		}
 	};
+	
 	var grindListen = function(grindSent){
 		//grindSent = 1;
 		if (grindSent == 1){
