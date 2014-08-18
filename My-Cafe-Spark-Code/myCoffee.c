@@ -26,6 +26,7 @@
  *******************************************************************************/
 
 /* declare global variable */
+
 int brewer =D0;
 int grinder =D1;
 int brewtime =0;
@@ -72,18 +73,20 @@ void loop()
  *******************************************************************************/
  int brewCoffee(String command)
 {
-  Spark.publish("brew");  
+  Spark.publish("brew"); 
   // look for the matching argument "brew" <-- max of 64 characters long
-  if(command == "brew")
+  if(command == "1")
   {
-  	brewtime = 600000;
     /*activate Water Heater and Water Pump*/
     digitalWrite(brewer, LOW);
-    delay(brewtime);
-    digitalWrite(brewer, HIGH);
-    delay(100);
+    delay(20);
     return 1;
-  }
+  } 
+  if(command == "-1"){
+     digitalWrite(brewer, HIGH);
+    delay(20);
+    return -1;
+    }
   else return -1;
 }
  
@@ -97,18 +100,16 @@ void loop()
  *******************************************************************************/
  int grindCoffee(String command)
 {
-    
+    int grindtime = command.toInt();
   // look for the matching argument "coffee" <-- max of 64 characters long
-  if(command == "grind")
+  if(grindtime >= 1)
   {
     digitalWrite(grinder, LOW);
-    delay(grindTime);
+    delay(grindtime);
     digitalWrite(grinder, HIGH);
     delay(100);
-    Spark.publish("grindDone");
+    Spark.publish(command);
     return 1;
   }
   else return -1;
 }
-
-
