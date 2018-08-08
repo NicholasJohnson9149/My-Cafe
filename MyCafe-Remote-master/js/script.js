@@ -1,6 +1,6 @@
 $(document).ready(function() {
-	var deviceID    = "55ff6c065075555324421487";
-    var accessToken = "6249ef747c68f32bde0e4deb2f1395705e59a84b";
+	var deviceID    = "YOU DEVCIE ID HERE ";
+    var accessToken = "YOUR ACCESS TOKEN HERE";
 	var brew = 0; // 1 = brewing, 0 = idle
 	var command = ""; // sendData type
 	var grindTime = 0; // how long to grind
